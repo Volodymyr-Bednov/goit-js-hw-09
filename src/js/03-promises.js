@@ -13,7 +13,7 @@ formRef.addEventListener('submit', evt => {
   evt.preventDefault();
 
   let delay = Number(delayRef.value);
-  for (let i = 0; i < Number(amountRef.value); i += 1) {
+  for (let i = 1; i <= Number(amountRef.value); i += 1) {
     createPromise(i, delay)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(
