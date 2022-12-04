@@ -58,7 +58,7 @@ const options = {
   },
 };
 
-flatpickr('input#datetime-picker', options);
+const flatpickrRef = flatpickr('input#datetime-picker', options);
 
 const addLeadingZero = value => value.toString().padStart(2, '0');
 
@@ -76,6 +76,8 @@ const renderTimer = ({ days, hours, minutes, seconds }) => {
   diffSeconds.textContent = addLeadingZero(seconds);
 };
 
-startBtn.addEventListener('click', () => {
+startBtn.addEventListener('click', evt => {
+  inputDate.disabled = true;
+  evt.target.disabled = true;
   timerId = setInterval(setValues, 1000);
 });
