@@ -77,7 +77,7 @@ const renderTimer = ({ days, hours, minutes, seconds }) => {
 };
 
 startBtn.addEventListener('click', evt => {
-  inputDate.disabled = true;
+  inputDate.setAttribute('disabled', 'disabled');
   evt.target.disabled = true;
   timerId = setInterval(setValues, 1000);
 });
