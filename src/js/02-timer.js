@@ -77,7 +77,10 @@ const renderTimer = ({ days, hours, minutes, seconds }) => {
 };
 
 startBtn.addEventListener('click', evt => {
+  flatpickrRef.element.disabled = true;
+  //console.log(flatpickrRef.element.disabled);
   inputDate.setAttribute('disabled', 'disabled');
+
   evt.target.disabled = true;
   timerId = setInterval(setValues, 1000);
 });
