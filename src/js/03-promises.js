@@ -29,6 +29,9 @@ formRef.addEventListener('submit', evt => {
       });
     delay += Number(stepRef.value);
   }
+  delayRef.value = '';
+  stepRef.value = '';
+  amountRef.value = '';
 });
 
 function createPromise(position, delay) {
