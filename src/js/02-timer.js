@@ -65,6 +65,11 @@ const addLeadingZero = value => value.toString().padStart(2, '0');
 const setValues = () => {
   const parseInputDte = new Date(inputDate.value);
   const diffDate = parseInputDte - new Date();
+  console.log(diffDate);
+  if (diffDate < 0) {
+    clearInterval(timerId);
+    return;
+  }
   const values = convertMs(diffDate);
   renderTimer(values);
 };
